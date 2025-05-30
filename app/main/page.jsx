@@ -46,7 +46,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-orange-100 py-8 sm:py-12 lg:py-20">
+      <section className="relative bg-gradient-to-br from-orange-50 to-orange-100 py-8 sm:py-12 lg:py-20 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
             <div className="space-y-4 sm:space-y-6">
@@ -62,15 +62,15 @@ export default function HomePage() {
                 delivered fresh to your doorstep in minutes.
               </p>
 
-              <div className="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-md flex flex-col sm:flex-row items-center justify-between">
+              <div className="max-w-3xl mx-auto bg-white rounded-lg overflow-hidden shadow-md flex items-center justify-between">
                 {/* Input and Locate me Section */}
-                <div className="flex-1 flex items-center w-full sm:w-auto">
+                <div className="flex-1 flex items-center  sm:w-auto">
                   <input
                     type="text"
                     placeholder="Enter your location"
-                    className="flex-1 p-3 text-gray-400 border-0 focus:outline-none focus:ring-0 w-full sm:w-auto"
+                    className="flex-1 p-3 text-gray-400 border-0 focus:outline-none focus:ring-0  sm:w-auto"
                   />
-                  <button className="flex items-center px-4 py-2 bg-white border border-dashed border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                  <button className="flex items-center px-4 py-2 bg-white border border-dashed border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors mr-1">
                     <svg
                       className="w-5 h-5 mr-2"
                       fill="none"
@@ -91,22 +91,6 @@ export default function HomePage() {
                       />
                     </svg>
                     Find Food
-                  </button>
-                  <button className="ml-2 p-2 bg-white border border-dashed border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
-                    <span className="sr-only">Locate me</span>
                   </button>
                 </div>
 
