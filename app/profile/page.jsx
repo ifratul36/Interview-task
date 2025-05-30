@@ -7,9 +7,29 @@ import { Menu, X, User, ShoppingBag, Ticket, HelpCircle, Settings, LogOut, Lock 
 
 export default function Profile() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [profileData, setProfileData] = useState({
+    name: "Mark Jecno",
+    email: "mark-jecno@gmail.com",
+    address: "93, Songbird Cir, Blackville, South Carolina, USA-29817",
+  });
+  const [passwordData, setPasswordData] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+    setProfileData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -57,7 +77,7 @@ export default function Profile() {
                   className={`flex items-center p-3 text-gray-600 hover:bg-orange-100 hover:text-orange-500 rounded-lg transition-colors ${
                     item.name === "Profile" ? "bg-orange-100 text-orange-500" : ""
                   }`}
-                  onClick={() => setIsSidebarOpen(false)} // Close sidebar on link click
+                  onClick={() => setIsSidebarOpen(false)}
                 >
                   <item.icon className="w-5 h-5 mr-3" />
                   <span>{item.name}</span>
@@ -89,7 +109,7 @@ export default function Profile() {
               </label>
               <input
                 type="text"
-                value="Mark Jecno"
+                value={profileData.name}
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                 readOnly
               />
@@ -113,7 +133,7 @@ export default function Profile() {
               </label>
               <input
                 type="email"
-                value="mark-jecno@gmail.com"
+                value={profileData.email}
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                 readOnly
               />
@@ -125,7 +145,9 @@ export default function Profile() {
               </label>
               <input
                 type="text"
-                value="93, Songbird Cir, Blackville, South Carolina, USA-29817"
+                name="address"
+                value={profileData.address}
+                onChange={handleProfileChange}
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
               />
             </div>
@@ -148,6 +170,9 @@ export default function Profile() {
               </label>
               <input
                 type="password"
+                name="currentPassword"
+                value={passwordData.currentPassword}
+                onChange={handlePasswordChange}
                 placeholder="••••••••"
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
               />
@@ -159,6 +184,9 @@ export default function Profile() {
               </label>
               <input
                 type="password"
+                name="newPassword"
+                value={passwordData.newPassword}
+                onChange={handlePasswordChange}
                 placeholder="••••••••"
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
               />
@@ -170,6 +198,9 @@ export default function Profile() {
               </label>
               <input
                 type="password"
+                name="confirmPassword"
+                value={passwordData.confirmPassword}
+                onChange={handlePasswordChange}
                 placeholder="••••••••"
                 className="flex-1 p-3 border border-dashed border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
               />

@@ -36,9 +36,10 @@ export default function HomePage() {
             <Image
               src="/images/profile.jpg"
               alt="Profile"
-              width={32}
-              height={32}
+              width={40}
+              height={40}
               className="rounded-full hover:opacity-80 border border-[#ED6923] object-cover"
+              style={{ aspectRatio: "1/1" }} // Ensures 1:1 aspect ratio
             />
           </Link>
         </nav>
@@ -193,7 +194,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6 sm:mb-8">
             <p className="text-xs sm:text-sm text-gray-600 mb-1">Category</p>
-            <h2 className="text-2xl sm:text-3xl font-bold">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-600">
               Popular <span className="text-orange-500">Category</span>
             </h2>
           </div>
@@ -276,7 +277,7 @@ export default function HomePage() {
                 Popular Food
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold">
-                <span className="text-gray-500 mr-2">Popular</span>
+                <span className="text-gray-600 mr-2">Popular</span>
                 <span className="text-orange-500">Food Near me</span>
               </h2>
             </div>
@@ -431,8 +432,8 @@ export default function HomePage() {
                 Popular Food
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold">
-                <span className="text-gray-500 mr-2">
-                  Popular ded Restaurant Near me
+                <span className="text-gray-600 mr-2">
+                Popular <span className="text-orange-500">Restaurent Near me</span>
                 </span>
               </h2>
             </div>
@@ -591,7 +592,7 @@ export default function HomePage() {
                   className="flex items-center bg-black text-white px-5 py-3 rounded-xl hover:bg-gray-800 transition"
                 >
                   <svg
-                    className="w-6 h-6 mr-3"
+                    className="w-6 h-6 mr-3 text-white"
                     viewBox="0 0 512 512"
                     fill="currentColor"
                   >
@@ -632,34 +633,43 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Statistics Section */}
-          <div className="mt-12 bg-orange-500 rounded-3xl px-6 py-8 text-white">
-            <div className="grid grid-cols-2 sm:grid-cols-4 text-center gap-6">
-              <div>
-                <div className="text-4xl font-bold mb-1">100+</div>
-                <div className="text-orange-100 text-sm">Food Menu</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-1">100+</div>
-                <div className="text-orange-100 text-sm">Downloads</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-1">20+</div>
-                <div className="text-orange-100 text-sm">Positive reviews</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-1">4.7</div>
-                <div className="text-orange-100 text-sm">Average Review</div>
-              </div>
-            </div>
-          </div>
+         {/* Statistics Section */}
+    <div className="mt-12 bg-[#ED6923] rounded-tl-3xl rounded-br-3xl px-6 py-8 text-white text-center relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="white" strokeWidth="0.5"/>
+          <circle cx="20" cy="20" r="5" fill="white"/>
+          <circle cx="80" cy="20" r="5" fill="white"/>
+          <circle cx="20" cy="80" r="5" fill="white"/>
+          <circle cx="80" cy="80" r="5" fill="white"/>
+        </svg>
+      </div>
+      <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="p-2">
+          <div className="text-4xl font-bold mb-1">100+</div>
+          <div className="text-orange-100 text-sm">Food Menu</div>
         </div>
-      </section>
+        <div className="p-2">
+          <div className="text-4xl font-bold mb-1">100+</div>
+          <div className="text-orange-100 text-sm">Downloads</div>
+        </div>
+        <div className="p-2">
+          <div className="text-4xl font-bold mb-1">20+</div>
+          <div className="text-orange-100 text-sm">Positive reviews</div>
+        </div>
+        <div className="p-2">
+          <div className="text-4xl font-bold mb-1">4.7</div>
+          <div className="text-orange-100 text-sm">Average Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Customer Testimonial */}
       <section className="py-8 sm:py-12 lg:py-16 bg-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center">
             <div className="space-y-4 sm:space-y-6">
               <p className="text-xs sm:text-sm text-gray-600 mb-2">
                 Testimonial
@@ -670,22 +680,23 @@ export default function HomePage() {
                 About our Services
               </h2>
               <div className="border border-orange-500 rounded-lg p-4 sm:p-6 shadow-sm relative">
-                <p className="text-gray-700 text-sm sm:text-md leading-relaxed mb-4 sm:mb-6">
-                  <Quote className="text-orange-500 size-5 -rotate-180"/>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
+                  <Quote className="text-orange-500 size-5 -rotate-180 inline-block mr-1" />
                   Love the convenience of Tweet! Fast, reliable, and super easy
                   to use for all your food delivery cravings.
-                  <Quote className="text-orange-500 size-5"/>
+                  <Quote className="text-orange-500 size-5 inline-block ml-1" />
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="avatar">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
                         <Image
                           src="/images/testimonial.jpg"
                           alt="Leon Fischer"
                           width={48}
                           height={48}
-                          className="rounded-full object-cover"
+                          className="object-cover"
+                          style={{ aspectRatio: "1/1" }}
                         />
                       </div>
                     </div>
@@ -723,49 +734,49 @@ export default function HomePage() {
               </div>
             </div>
             {/* Food Image Section */}
-            <div className="relative md:flex sm:hidden justify-center lg:justify-end">
+            <div className="relative flex justify-center lg:justify-end">
               <div className="relative">
                 {/* Main Food Image */}
-                <div className="relative lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border border-dashed border-orange-700 z-10">
-                  <div className="rounded-full border border-dashed border-orange-700">
-                    <Image
-                      src="/images/testimonial-main.png"
-                      alt="Delicious food bowl"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border border-dashed border-orange-700 z-10">
+                  <Image
+                    src="/images/testimonial-main.png"
+                    alt="Delicious food bowl"
+                    width={384}
+                    height={384}
+                    className="object-cover rounded-full"
+                    style={{ aspectRatio: "1/1" }}
+                  />
                 </div>
 
                 {/* Cherry Tomatoes & Chili - Slightly Behind Top Left */}
-                <div className="absolute top-[20px] left-[0px] w-[140px] h-[140px] z-0 hidden md:block">
+                <div className="absolute top-2 left-0 w-24 sm:w-32 lg:w-36 h-24 sm:h-32 lg:h-36 z-0">
                   <Image
                     src="/images/tomato-chlli.png"
                     alt="Cherry tomatoes and chili"
-                    width={140}
-                    height={140}
+                    width={144}
+                    height={144}
                     className="object-contain"
                   />
                 </div>
 
                 {/* Green Peas - Top Right */}
-                <div className="absolute -top-6 -right-2 w-[90px] h-[90px] z-0 hidden md:block">
+                <div className="absolute -top-4 -right-4 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 z-0">
                   <Image
                     src="/images/green.png"
                     alt="Green peas"
-                    width={64}
-                    height={64}
+                    width={96}
+                    height={96}
                     className="object-contain"
                   />
                 </div>
 
                 {/* Tomato Slices - Bottom Left */}
-                <div className="absolute -bottom-6 -left-2 w-[200px] h-[100px] z-0 hidden md:block">
+                <div className="absolute -bottom-4 -left-4 w-24 sm:w-28 lg:w-32 h-12 sm:h-14 lg:h-16 z-0">
                   <Image
                     src="/images/tomato-bottom.png"
                     alt="Tomato slices"
-                    width={100}
-                    height={100}
+                    width={128}
+                    height={64}
                     className="object-contain"
                   />
                 </div>
