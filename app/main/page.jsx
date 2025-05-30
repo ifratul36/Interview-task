@@ -61,35 +61,57 @@ export default function HomePage() {
                 Discover delicious meals from your favorite restaurants,
                 delivered fresh to your doorstep in minutes.
               </p>
-              <div className="flex items-center flex-wrap gap-2 rounded-xl border border-[#FE8C4F] overflow-hidden shadow-md w-full max-w-md px-2 py-2 sm:px-3 sm:py-3">
-                {/* Input Field */}
-                <input
-                  type="text"
-                  placeholder="Enter your location"
-                  className="flex-1 min-w-0 px-3 py-2 text-sm outline-none text-[#0000006f]"
-                />
 
-                {/* Locate Me */}
-                <button className="flex items-center gap-1 text-[#000] text-sm">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 11.5a.5.5 0 100-1 .5.5 0 000 1zM21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9zm-9 0v0"
-                    />
-                  </svg>
-                  <span className="text-[#FE8C4F]">Locate me</span>
-                </button>
+              <div className="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-md flex flex-col sm:flex-row items-center justify-between">
+                {/* Input and Locate me Section */}
+                <div className="flex-1 flex items-center w-full sm:w-auto">
+                  <input
+                    type="text"
+                    placeholder="Enter your location"
+                    className="flex-1 p-3 text-gray-400 border-0 focus:outline-none focus:ring-0 w-full sm:w-auto"
+                  />
+                  <button className="flex items-center px-4 py-2 bg-white border border-dashed border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    Find Food
+                  </button>
+                  <button className="ml-2 p-2 bg-white border border-dashed border-gray-300 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                    <span className="sr-only">Locate me</span>
+                  </button>
+                </div>
 
                 {/* Find Food Button */}
-                <button className="btn border-none bg-orange-500 text-white font-semibold px-4 py-2 text-sm">
+                <button className="w-full sm:w-auto mt-2 sm:mt-0 px-6 py-3 bg-[#ED6923] text-white font-semibold rounded-r-lg hover:bg-orange-600 transition-colors">
                   Find Food
                 </button>
               </div>
@@ -104,11 +126,11 @@ export default function HomePage() {
                 />
               </div>
             </div> */}
-            <div className="relative py-12 sm:py-16 lg:py-20">
+            <div className="relative py-8 sm:py-12 lg:py-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative">
                   {/* Background Image */}
-                  <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
+                  <div className="relative w-full h-56 sm:h-72 lg:h-96 rounded-lg overflow-hidden">
                     <Image
                       src="/images/hero.png"
                       alt="Customer holding a burger"
@@ -118,13 +140,13 @@ export default function HomePage() {
                   </div>
 
                   {/* Satisfied Customer Badge (Top Left) */}
-                  <div className="absolute top-4 left-4 bg-white p-2 sm:p-3 rounded-lg shadow-md flex-col items-center gap-2 ">
+                  <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-white p-2 sm:p-3 rounded-lg shadow-md flex flex-col items-center gap-1 sm:gap-2">
                     {/* Overlapping Avatars */}
-                    <div className="flex -space-x-3">
+                    <div className="flex -space-x-2 sm:-space-x-3">
                       {[...Array(3)].map((_, i) => (
                         <div
                           key={i}
-                          className="relative w-10 h-10 rounded-full border-2 border-white overflow-hidden"
+                          className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white overflow-hidden"
                         >
                           <Image
                             src={`/images/hero-${i + 1}.jpg`}
@@ -136,13 +158,13 @@ export default function HomePage() {
                       ))}
                     </div>
                     {/* Text and Rating */}
-                    <div className="flex flex-col">
-                      <p className="text-xs sm:text-sm text-gray-600">
+                    <div className="flex flex-col items-center">
+                      <p className="text-[10px] sm:text-xs lg:text-sm text-gray-600">
                         Satisfied Customer
                       </p>
                       <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
-                        <span className="text-xs sm:text-sm font-semibold text-gray-700">
+                        <Star className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-yellow-400 fill-yellow-400" />
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-700">
                           5.0 (3K Reviews)
                         </span>
                       </div>
@@ -150,8 +172,8 @@ export default function HomePage() {
                   </div>
 
                   {/* Flavor Fusion Bistro Card (Bottom Left) */}
-                  <div className="absolute bottom-4 left-4 bg-[#ffffff5b] p-2 sm:p-3 rounded-lg shadow-md flex items-center gap-2 w-48 sm:w-56">
-                    <div className="relative w-30 h-30 sm:w-12 sm:h-12 rounded overflow-hidden">
+                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-[#ffffff5b] p-2 sm:p-3 rounded-lg shadow-md flex items-center gap-2 w-40 sm:w-48 lg:w-56">
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded overflow-hidden">
                       <Image
                         src="/images/hero-image.jpg"
                         alt="Flavor Fusion Bistro"
@@ -159,26 +181,26 @@ export default function HomePage() {
                         className="object-cover"
                       />
                     </div>
-                    <div>
-                      <h3 className="text-xs sm:text-sm font-semibold text-gray-900">
+                    <div className="flex-1">
+                      <h3 className="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900">
                         Flavor Fusion Bistro
                       </h3>
                       <div className="flex items-center gap-1">
-                        <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-yellow-400" />
-                        <span className="text-xs sm:text-sm text-gray-600">
+                        <Star className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-yellow-400 fill-yellow-400" />
+                        <span className="text-[10px] sm:text-xs lg:text-sm text-gray-600">
                           4.9 ★
                         </span>
                       </div>
                     </div>
                     <button className="p-1 rounded-full hover:bg-gray-100">
-                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 hover:text-red-500" />
+                      <Heart className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-gray-400 hover:text-red-500" />
                     </button>
                   </div>
 
                   {/* 24/7 Delivery Badge (Bottom Right) */}
-                  <div className="absolute bottom-4 right-4 bg-[#ffffff5b] p-2 sm:p-3 rounded-lg shadow-md flex items-center gap-2">
-                    <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500" />
-                    <span className="text-xs sm:text-sm font-semibold text-gray-900">
+                  <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 bg-[#ffffff5b] p-2 sm:p-3 rounded-lg shadow-md flex items-center gap-1 sm:gap-2">
+                    <Truck className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-orange-500" />
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-semibold text-gray-900">
                       24/7 Delivery
                     </span>
                   </div>
@@ -433,7 +455,8 @@ export default function HomePage() {
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold">
                 <span className="text-gray-600 mr-2">
-                Popular <span className="text-orange-500">Restaurent Near me</span>
+                  Popular{" "}
+                  <span className="text-orange-500">Restaurent Near me</span>
                 </span>
               </h2>
             </div>
@@ -633,38 +656,47 @@ export default function HomePage() {
             </div>
           </div>
 
-         {/* Statistics Section */}
-    <div className="mt-12 bg-[#ED6923] rounded-tl-3xl rounded-br-3xl px-6 py-8 text-white text-center relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-          <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="white" strokeWidth="0.5"/>
-          <circle cx="20" cy="20" r="5" fill="white"/>
-          <circle cx="80" cy="20" r="5" fill="white"/>
-          <circle cx="20" cy="80" r="5" fill="white"/>
-          <circle cx="80" cy="80" r="5" fill="white"/>
-        </svg>
-      </div>
-      <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="p-2">
-          <div className="text-4xl font-bold mb-1">100+</div>
-          <div className="text-orange-100 text-sm">Food Menu</div>
+          {/* Statistics Section */}
+          <div className="mt-12 bg-[#ED6923] rounded-tl-3xl rounded-br-3xl px-6 py-8 text-white text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <svg
+                className="w-full h-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid slice"
+              >
+                <path
+                  d="M10 10 L90 10 L90 90 L10 90 Z"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+                <circle cx="20" cy="20" r="5" fill="white" />
+                <circle cx="80" cy="20" r="5" fill="white" />
+                <circle cx="20" cy="80" r="5" fill="white" />
+                <circle cx="80" cy="80" r="5" fill="white" />
+              </svg>
+            </div>
+            <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="p-2">
+                <div className="text-4xl font-bold mb-1">100+</div>
+                <div className="text-orange-100 text-sm">Food Menu</div>
+              </div>
+              <div className="p-2">
+                <div className="text-4xl font-bold mb-1">100+</div>
+                <div className="text-orange-100 text-sm">Downloads</div>
+              </div>
+              <div className="p-2">
+                <div className="text-4xl font-bold mb-1">20+</div>
+                <div className="text-orange-100 text-sm">Positive reviews</div>
+              </div>
+              <div className="p-2">
+                <div className="text-4xl font-bold mb-1">4.7</div>
+                <div className="text-orange-100 text-sm">Average Review</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="p-2">
-          <div className="text-4xl font-bold mb-1">100+</div>
-          <div className="text-orange-100 text-sm">Downloads</div>
-        </div>
-        <div className="p-2">
-          <div className="text-4xl font-bold mb-1">20+</div>
-          <div className="text-orange-100 text-sm">Positive reviews</div>
-        </div>
-        <div className="p-2">
-          <div className="text-4xl font-bold mb-1">4.7</div>
-          <div className="text-orange-100 text-sm">Average Review</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Customer Testimonial */}
       <section className="py-8 sm:py-12 lg:py-16 bg-orange-50">
