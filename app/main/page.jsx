@@ -287,10 +287,10 @@ export default function HomePage() {
 
           <div className="relative">
             {/* Navigation Arrows */}
-            <button className="absolute p-3 border btn btn-outline left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
+            <button className="absolute p-3 border btn btn-circle btn-outline left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
               <ChevronLeft className="h-4 w-4 text-gray-600" />
             </button>
-            <button className="absolute p-3 border btn btn-outline right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
+            <button className="absolute p-3 border btn btn-circle btn-outline right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
               <ChevronRight className="h-4 w-4 text-gray-600" />
             </button>
 
@@ -442,10 +442,10 @@ export default function HomePage() {
           </div>
 
           <div className="relative">
-            <button className="absolute p-3 border btn btn-outline left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
+            <button className="absolute p-3 border btn btn-circle btn-outline left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
               <ChevronLeft className="h-4 w-4 text-gray-600" />
             </button>
-            <button className="absolute p-3 border btn btn-outline right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
+            <button className="absolute p-3 border btn btn-circle btn-outline right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-xl hidden sm:flex">
               <ChevronRight className="h-4 w-4 text-gray-600" />
             </button>
 
