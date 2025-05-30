@@ -669,14 +669,13 @@ export default function HomePage() {
                 <br />
                 About our Services
               </h2>
-              <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm relative">
+              <div className="border border-orange-500 rounded-lg p-4 sm:p-6 shadow-sm relative">
                 <p className="text-gray-700 text-sm sm:text-md leading-relaxed mb-4 sm:mb-6">
+                  <Quote className="text-orange-500 size-5 -rotate-180"/>
                   Love the convenience of Tweet! Fast, reliable, and super easy
                   to use for all your food delivery cravings.
+                  <Quote className="text-orange-500 size-5"/>
                 </p>
-                <div className="text-orange-500 text-4xl font-bold absolute bottom-4 right-4 sm:bottom-6 sm:right-6">
-                  <Quote />
-                </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="avatar">
